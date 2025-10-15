@@ -1,0 +1,186 @@
+---
+import Home from "../Icons/Home.astro";
+
+const {page} = Astro.props;
+
+const changeColorTextIndexPage = page == "index" ? "text-purple-500" : "text-white";
+const changeColorTextProjectPage = page == "project" ? "text-purple-500" : "text-white";
+
+---
+
+<div id="container" data-page={page}>
+	<header id="header-nav" class="fixed sm:h-auto gap-6 z-10 flex justify-start sm:justify-center flex-row-reverse w-full mx-auto transition-all duration-400 h-0"> 
+		<button class="h-8 w-8 z-40 mt-4 mr-4 sm:hidden cursor-pointer relative" id="hamburger-menu">
+			<div id="menu-burger-icon" class="inset-0 transition-all duration-400 absolute">
+				<svg  class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
+			</div>
+
+			<div id="close-menu-burger-icon" class="inset-0 transition-all duration-400 opacity-0 scale-50 absolute">
+				<svg  class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path> </svg>
+			</div>
+		</button>
+
+		<nav class=`overflow-hidden bg-black/80 absolute w-full md:w-auto md:pt-0 md:mt-2 sm:flex sm:mt-4 sm:justify-center px-3 text-sm font-medium text-gray-600 dark:text-gray-200 sm:bg-black/0 sm:rounded-full sm:px-4 sm:py-0 sm:w-auto justify-center items-center nav-scroll transition-all max-h-0 sm:max-h-max duration-600 ease-in-out gap-5 ${page == 'project' ? 'scrolled' : ''}` id="nav-header">
+			<a href="/#" class="scale-0 sm:scale-100">
+				<Home class=`size-6 md:size-4 mx-auto transition-all ${changeColorTextIndexPage} hover:text-purple-500 cursor-pointer house-scroll-anchor` />
+			</a>
+			<a href="mailto:leonelsilvera9@gmail.com" class=`relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all ${changeColorTextIndexPage} hover:text-purple-500 dark:hover:text-purple-500 contact-scroll-anchor`>Contacto</a>
+			<a href="/#proyectos" class=`relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all hover:text-purple-500 dark:hover:text-purple-500 ${changeColorTextProjectPage} proyect-scroll-anchor`>Proyectos</a>
+			<a href="/#skills" class="relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all hover:text-emerald-500 dark:hover:text-emerald-500 text-white skills-scroll-anchor">Habilidades</a>
+			<a href="/#about-me" class="relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all hover:text-emerald-500 dark:hover:text-emerald-500 text-white about-me-scroll-anchor">Sobre mí</a>
+		</nav>
+	</header>
+</div>
+
+<script>
+
+	window.addEventListener("DOMContentLoaded", function() {
+		const root = document.querySelector("#container") as HTMLElement;
+		const page = root?.dataset.page;
+
+		if(page == "index") {
+			app();
+		}
+		menuMobile();
+    })
+
+	function app() {
+		// const scrollOffset = 100;
+		const contactScroll = document.querySelector(".contact-scroll");
+		const contactScrollElAnchor = document.querySelector(".contact-scroll-anchor");
+		const houseScrollElAnchor = document.querySelector(".house-scroll-anchor");
+
+		const pictureScroll = document.querySelector(".picture-scroll");
+		const headerScrollEl = document.querySelector(".nav-scroll");
+		
+		const proyectScroll = document.querySelector(".proyect-scroll");
+		const proyectScrollAnchor = document.querySelector(".proyect-scroll-anchor");
+
+		const skillScroll = document.querySelector(".skill-scroll");
+		const skillScrollAnchor = document.querySelector(".skills-scroll-anchor");
+
+		const aboutMeScroll = document.querySelector(".about-me-scroll");
+		const aboutMeScrollAnchor = document.querySelector(".about-me-scroll-anchor");
+		
+		window.addEventListener('scroll', () => {
+			const pictureTop = pictureScroll?.getBoundingClientRect().top ?? 0;
+			const proyectTop = proyectScroll?.getBoundingClientRect().top ?? 0;
+			const skillTop = skillScroll?.getBoundingClientRect().top ?? 0;
+			const aboutMeTop = aboutMeScroll?.getBoundingClientRect().top ?? 0;
+			
+			if(proyectTop == 0) {
+				console.log(proyectTop)
+			}
+
+			if(pictureTop <= 50) {
+				headerScrollEl?.classList.add('scrolled');
+			} else {
+				headerScrollEl?.classList.remove('scrolled');
+			}
+
+			if(proyectTop <= 150) {
+				proyectScrollAnchor?.classList.add('text-purple-500');
+				proyectScrollAnchor?.classList.remove('text-white');
+				contactScrollElAnchor?.classList.remove('text-purple-500');
+				houseScrollElAnchor?.classList.remove('text-purple-500');
+			} else {
+				proyectScrollAnchor?.classList.remove('text-purple-500');
+				proyectScrollAnchor?.classList.add('text-white');
+				contactScrollElAnchor?.classList.add('text-purple-500');
+				houseScrollElAnchor?.classList.add('text-purple-500');
+			}
+
+			if(skillTop <= 150) {
+				skillScrollAnchor?.classList.add('text-emerald-500');
+				skillScrollAnchor?.classList.remove('text-white');
+				proyectScrollAnchor?.classList.remove('text-purple-500');
+			} else {
+				skillScrollAnchor?.classList.add('text-white');
+				skillScrollAnchor?.classList.remove('text-emerald-500');
+				proyectScrollAnchor?.classList.add('text-purple-500');
+			}
+			
+			if(aboutMeTop <= 225) {
+				aboutMeScrollAnchor?.classList.add('text-emerald-500');
+				aboutMeScrollAnchor?.classList.remove('text-white');
+				skillScrollAnchor?.classList.remove('text-emerald-500');
+			} else {
+				aboutMeScrollAnchor?.classList.remove('text-emerald-500');
+				aboutMeScrollAnchor?.classList.add('text-white');
+				skillScrollAnchor?.classList.add('text-emerald-500');
+			}
+		})
+	}
+
+	function menuMobile() {
+		const hamburgerMenuEl = document.querySelector("#hamburger-menu");
+		const navHeader = document.querySelector("#nav-header");
+		const menuBurgerIcon = document.querySelector("#menu-burger-icon");
+		const closeMenuIcon = document.querySelector("#close-menu-burger-icon");
+		const headerNav = document.querySelector("#header-nav");
+
+		hamburgerMenuEl?.addEventListener("click", function(e) {
+			if(navHeader?.classList.contains("expand-vertically-animation")) {
+				headerNav?.classList.remove("bd-filter-sm");
+				headerNav?.classList.remove("h-[295.9px]");
+				navHeader?.classList.remove("expand-vertically-animation");
+
+				menuBurgerIcon?.classList.remove("opacity-0");
+				menuBurgerIcon?.classList.remove("scale-50");
+				menuBurgerIcon?.classList.add("scale-100");
+				menuBurgerIcon?.classList.remove("rotate-180");
+				
+				
+				closeMenuIcon?.classList.add("scale-50");
+				closeMenuIcon?.classList.add("opacity-0");
+				closeMenuIcon?.classList.remove("rotate-180");
+			} else {
+				headerNav?.classList.add("bd-filter-sm");
+				headerNav?.classList.add("h-[295.9px]");
+				navHeader?.classList.add("expand-vertically-animation");
+
+				menuBurgerIcon?.classList.remove("scale-100");
+				menuBurgerIcon?.classList.add("scale-50");
+				menuBurgerIcon?.classList.add("opacity-0");
+				menuBurgerIcon?.classList.add("rotate-180");
+
+
+				closeMenuIcon?.classList.remove("scale-50");
+				closeMenuIcon?.classList.add("rotate-180");
+				closeMenuIcon?.classList.remove("opacity-0");
+			}
+			
+		})
+	}
+</script>
+
+<style>
+	.scrolled {
+		background-color: rgba(0, 0, 0, .8);
+	}
+	.header-scroll,
+	.scrolled {
+		transition: all ease 500ms;
+	}
+	
+	.menu {
+		border-radius: 0;
+		background-color: rgba(0, 0, 0, .8);
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	
+	.expand-vertically-animation {
+		padding: 2rem 0;
+		max-height: 350px;
+	}
+	.expand-vertically-animation a {
+		scale: 1;
+	}
+
+	.bd-filter-sm {
+		backdrop-filter: blur(8px);
+	}
+
+</style>

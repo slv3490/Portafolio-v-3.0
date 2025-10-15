@@ -1,0 +1,25 @@
+---
+import Home from "../Icons/Home.astro";
+---
+
+<header id="header-nav" class="fixed sm:h-auto gap-6 z-10 flex justify-start sm:justify-center flex-row-reverse w-full mx-auto transition-all duration-400 h-0"> 
+    <button class="h-8 w-8 z-40 mt-4 mr-4 sm:hidden cursor-pointer relative" id="hamburger-menu">
+        <div id="menu-burger-icon" class="inset-0 transition-all duration-400 absolute">
+            <svg  class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
+        </div>
+
+        <div id="close-menu-burger-icon" class="inset-0 transition-all duration-400 opacity-0 scale-50 absolute">
+            <svg  class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path> </svg>
+        </div>
+    </button>
+
+    <nav class="overflow-hidden bg-black/80 absolute w-full md:w-auto md:pt-0 md:mt-2 sm:flex sm:mt-4 sm:justify-center px-3 text-sm font-medium text-gray-600 dark:text-gray-200 sm:bg-black/0 sm:rounded-full sm:px-4 sm:py-0 sm:w-auto justify-center items-center nav-scroll transition-all max-h-0 sm:max-h-max duration-600 ease-in-out gap-5" id="nav-header">
+        <a href="#" class="scale-0 sm:scale-100">
+            <Home class="size-6 md:size-4 mx-auto transition-all text-purple-500 hover:text-purple-500 cursor-pointer house-scroll-anchor" />
+        </a>
+        <a href="#" class="relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all text-purple-500 hover:text-purple-500 dark:hover:text-purple-500 contact-scroll-anchor">Contacto</a>
+        <a href="#proyectos" class="relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all hover:text-purple-500 dark:hover:text-purple-500 text-white proyect-scroll-anchor">Proyectos</a>
+        <a href="#skills" class="relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all hover:text-emerald-500 dark:hover:text-emerald-500 text-white skills-scroll-anchor">Habilidades</a>
+        <a href="#about-me" class="relative text-center block px-2 py-4 sm:py-2 scale-0 sm:scale-100 transition-all hover:text-emerald-500 dark:hover:text-emerald-500 text-white about-me-scroll-anchor">Sobre mí</a>
+    </nav>
+</header>

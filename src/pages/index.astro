@@ -1,11 +1,228 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
+
+//Icons
+import CodeIcon from '../Icons/Code.astro';
+import Contact from '../Icons/Contact.astro';
+import LinkedIn from '../Icons/LinkedIn.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Header from '../components/Header.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Portafolio de Leonel Enrique Silvera Desarrollador y Programador web">
+	<Header page="index"/>
+	<main class="px-4">
+		<section class="mx-auto sm:items-center pt-32 max-w-4xl flex flex-col-reverse justify-center md:justify-between md:flex-row items-center gap-10">
+			<section class="text-pretty flex flex-col items-start animate-fade-in max-w-[472px] min-w-auto">
+				<a href="https://linkedin.com/in/midudev" target="_blank" rel="noopener" class="flex mx-auto md:mx-0 transition md:justify-center md:hover:scale-105"> 
+					<div class="flex items-center">
+						<span class="relative inline-flex overflow-hidden rounded-full p-[1px]"> 
+							<span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#AD46FF_0%,#622992_50%,#AD46FF_100%)]"></span> 
+							<div class="inline-flexmd:text-left items-center justify-center w-full z-50 px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"> Disponible para trabajar </div> 
+						</span> 
+					</div>
+				</a>
+
+				<h1 class="text-5xl font-bold my-4 prose prose-invert mx-auto text-center md:text-left md:mx-0">¡Hola! Soy Leonel</h1>
+				<p class="prose prose-invert text-center md:text-left"><span class="text-purple-500">Desarrollador web full stack</span> con pasión por el
+					<span class="text-purple-500">backend</span>. Especializado en crear 
+					<span class="text-purple-500">soluciones únicas</span> e <span class="text-purple-500">innovadoras</span>.</p>
+
+				<nav class="flex flex-wrap gap-4 mt-8 mx-auto md:mx-0"> 
+					<a href="mailto:leonelsilvera9@gmail.com" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-2 active:bg-black">  
+						<Contact />
+						Contáctame
+					</a>
+
+					<a href="https://linkedin.com/in/midudev" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-2 active:bg-black">  
+						<LinkedIn />
+						LinkedIn
+					</a>
+				</nav>
+			</section>
+			
+			<picture class="max-w-50 sm:max-w-72 sm:h-auto sm:w-auto md:max-w-96 picture-scroll">
+				<source srcset="./images/fotoLeonel.webp" type="image/webp">
+				<img src="./images/fotoLeonel.png" alt="Foto de Leonel Enrique Silvera" class="mask-image w-full h-auto animate-fade-in-left z-40" />
+			</picture>
+		</section>
+
+		<section class="mx-auto max-w-4xl my-28">
+			<section id="proyectos" data-section="proyectos" class="proyect-scroll section scroll-m-20 w-full mx-auto container">  
+				<h2 class="flex relative items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">  
+					<CodeIcon />
+					Proyectos
+					<div class="h-1 w-12 bg-purple-500 absolute bottom-0 left-10"></div>
+				</h2> 
+				<div class="flex flex-col gap-y-16"> 
+					<Projects 
+						getNumberProjects="3" 
+						flexboxArticle="flex flex-col md:flex-row" 
+						wcalc="md:w-1/2"
+						textCenter="text-center md:text-left"
+                    	pills="justify-center md:justify-start"
+					/>
+					<div class="flex justify-end">
+						<a href="/projects" class="cursor-pointer relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-emerald-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none">
+							<span class="relative px-5 py-2.5 transition-all ease-in duration-75 dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+							Ver todos mis proyectos
+							</span>
+						</a>
+					</div>
+				</div> 
+			</section>
+		</section>
+
+		<section class="mx-auto max-w-4xl skill-scroll">
+			<Skills />
+		</section>
+
+		<section id="about-me" class="scroll-m-20 w-full about-me-scroll">  
+			<h2 class="mx-auto relative container md:max-w-4xl flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">  <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"></path></svg>
+			Sobre mí
+			<div class="h-1 w-12 bg-emerald-400 absolute bottom-0 left-10"></div>
+			</h2> 
+			
+			<section class="flex flex-col-reverse gap-6 md:flex-row max-w-4xl mx-auto items-center">
+				<section class="basis-2xs md:basis-2xl prose prose-invert">
+					<p>
+						Me apasionan los <span class="text-emerald-300/80">desafíos</span> que surgen al 
+						<span class="text-emerald-300/80">programar 💻</span>, la 
+						<span class="text-emerald-300/80">ilusión de aprender</span> algo nuevo y la 
+						<span class="text-emerald-300/80">satisfacción</span> de superar cada reto 🏆.
+					</p>
+
+					<p>
+						Disfruto <span class="text-emerald-300/80">salir de mi zona de confort 🚀</span>, ya que es allí donde surgen las mejores oportunidades para 
+						<span class="text-emerald-300/80">crecer y adquirir nuevas habilidades 🌱</span>. 
+						Esta <span class="text-emerald-300/80">búsqueda constante de aprendizaje</span> fue lo que despertó mi 
+						<span class="text-emerald-300/80">interés por la programación 👨‍💻</span>.
+					</p>
+
+					<p class="">
+						Desde niño me <span class="text-emerald-300/80">intrigaba</span> cómo funcionaban las 
+						<span class="text-emerald-300/80">computadoras</span> y el trabajo que había detrás de 
+						<span class="text-emerald-300/80">sitios web 🌐</span> y 
+						<span class="text-emerald-300/80">videojuegos 👾</span> tan llamativos e interactivos.
+					</p>
+
+					<p>
+						Con el tiempo, decidí <span class="text-emerald-300/80">dar el paso</span> y comenzar a 
+						<span class="text-emerald-300/80">programar</span>. Con 
+						<span class="text-emerald-300/80">dedicación</span> y 
+						<span class="text-emerald-300/80">entusiasmo 💪</span>, he ido desarrollando nuevas
+						<span class="text-emerald-300/80">competencias</span> que me permiten 
+						<span class="text-emerald-300/80">superar cada obstáculo</span> y seguir avanzando en mi camino como 
+						<span class="text-emerald-300/80">programador 🔥</span>.
+					</p>
+				</section>
+				
+				<section class="monitor-anim">
+					<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[6px] md:border-[8px] rounded-t-xl h-auto max-w-[301px] md:h-auto md:max-w-[512px]">
+						<picture class="overflow-hidden bg-white dark:bg-gray-800 relative">
+							<video src="/videos/110.mp4" class="hidden dark:block w-full relative" muted loop autoplay></video>
+
+							<source srcset="/images/about-me/appsEscritorio.webp" type="image/webp">
+							<img loading="lazy" src="/images/about-me/appsEscritorio.png" class="absolute top-0 right-0 bottom-0 left-0 h-full" alt="desktop icons">
+							
+						</picture>
+						
+						<picture>
+							<source srcset="/images/about-me/barraDeTareas.webp" type="image/webp">
+							<img loading="lazy" src="/images/about-me/barraDeTareas.jpg" alt="taskbar" class="z-10 relative">
+						</picture>
+					</div>
+
+					<div class="relative mx-auto bg-gray-800 dark:bg-gray-800 h-[1px] md:h-[50px] max-w-[351px] md:max-w-max">
+						<div class="absolute left-1/2 top-0 -translate-x-1/2 w-[30px] h-[40px] md:h-[50px] bg-gray-800">
+					</div>
+					</div>
+					<div class="relative mx-auto rounded bg-gray-800 dark:bg-gray-800 h-[5px] w-[120px] mt-[30px] md:mt-0 md:max-w-max">
+						<div class="absolute rounded left-1/2 top-0 -translate-x-1/2 md:w-[180px] md:h-[6px] bg-gray-800"></div>
+					</div>
+					<div class="relative mx-auto bg-gray-800 dark:bg-gray-800 h-[5px] w-[110px] md:mt-0 md:max-w-max">
+						<div class="absolute left-1/2 top-0 -translate-x-1/2 md:w-[170px] md:h-[6px] bg-gray-800"></div>
+					</div>
+					
+				</section>
+			</section>
+			
+		</section>
+
+	</main>
 </Layout>
+
+<style>
+	:root {
+		--scroll-color: rgb(173, 70, 255);
+		--scroll: rgb(81, 192, 151);
+	}
+
+	.mask-image {
+		mask-image: linear-gradient(
+			black 80%,
+			transparent
+		);
+	}
+
+	body::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	body::-webkit-scrollbar-track {
+		background: #111;
+		border-radius: 8px;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, var(--scroll-color));
+		border-radius: 10px;
+		transition: background 0.2s linear;
+	}
+
+	.monitor-anim {
+        opacity: 0;
+        animation: reveal-monitor linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 30%;
+    }
+
+    @keyframes reveal-monitor {
+		from {
+			opacity: 0;
+			scale: .9;
+		}
+
+		to {
+			opacity: 1;
+			scale: 1;
+		}
+    }
+
+</style>
+
+<script>
+  const root = document.documentElement;
+
+  window.addEventListener("scroll", () => {
+    // Calcular el progreso del scroll (0 = arriba, 1 = abajo)
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+
+	// rgb(173, 70, 255)
+	// rgb(81, 192, 151)
+    // Interpolar entre púrpura (#800080) y verde (#00ff00)
+    const r = Math.round(173 + (0 - 180) * scrollPercent);
+    const g = Math.round(0 + (255 - 0) * scrollPercent);
+    const b = Math.round(255 + (0 - 125) * scrollPercent);
+
+    const color = `rgb(${r}, ${g}, ${b})`;
+
+    root.style.setProperty("--scroll-color", color);
+  });
+</script>

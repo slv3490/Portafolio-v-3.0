@@ -1,0 +1,178 @@
+---
+import Docker from "../Icons/Docker.astro";
+import Git from "../Icons/Git.astro";
+import GitHub from "../Icons/GitHub.astro";
+import HTML from "../Icons/HTML.astro";
+import JavaScript from "../Icons/JavaScript.astro";
+import Laravel from "../Icons/Laravel.astro";
+import MySQL from "../Icons/MySQL.astro";
+import CSS from '../Icons/CSS.astro';
+import NPM from "../Icons/NPM.astro";
+import PHP from "../Icons/PHP.astro";
+import Postman from "../Icons/Postman.astro";
+import SASS from "../Icons/SASS.astro";
+import SQL from "../Icons/SQL.astro";
+import Tailwind from "../Icons/Tailwind.astro";
+import ListOfSkill from "./ListOfSkill.astro";
+import ShowSkills from "./ShowSkills.astro";
+---
+
+<section id="skills" data-section="skills" class="scroll-m-20 w-auto my-28 container mx-auto">
+    <h2 class="mx-auto relative container flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">  
+    <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"></path></svg>
+        Habilidades
+    <div class="h-1 w-12 bg-emerald-400 absolute bottom-0 left-10"></div>
+    </h2>
+
+    <section class="flex flex-col md:flex-row w-full gap-4">
+        <section class="grid min-[320px]:grid-cols-2 min-[480px]:grid-cols-3 md:grid-cols-2 md:basis-72 gap-8">
+            <div>
+                <h3 class="mb-3.5 font-bold">Frontend</h3>
+
+                <ul>
+                    <ListOfSkill data-set-list-of-skill="html">HTMl</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="css">CSS</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="javascript">JavaScript</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="tailwind">TailwindCSS</ListOfSkill>
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-3.5 font-bold">Backend</h3>
+
+                <ul>
+                    <ListOfSkill data-set-list-of-skill="php">PHP</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="laravel">Laravel</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="sql">SQL</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="mysql">MySQL</ListOfSkill>
+                </ul>
+            </div>
+            <div class="md:col-span-2 md:mt-8">
+                <h3 class="mb-3.5 font-bold">Otros</h3>
+
+                <ul>
+                    <ListOfSkill data-set-list-of-skill="docker">Docker</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="postman">Postman</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="git">Git</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="github">Github</ListOfSkill>
+                    <ListOfSkill data-set-list-of-skill="sass">SASS</ListOfSkill>
+                </ul>
+            </div>
+        </section>
+
+        <section class="relative w-auto h-full bg-emerald-800/20 p-6 rounded-2xl md:basis-2xl border-emerald-800 border-1 section-show-skills-anim">
+
+            <!-- Background Pattern -->
+                <div class="absolute inset-0 rounded-2xl">
+                    <div class=" rounded-2xl relative h-full w-full bg-transparent [&>div]:absolute [&>div]:inset-0 [&>div]:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] [&>div]:bg-[size:14px_24px]">
+                    
+                    <div class="rounded-2xl"></div>
+                    
+                    </div>
+                </div>
+
+
+
+            <div class="relative grid grid-cols-2 min-[376px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
+                <ShowSkills class="skillIcon" data-set-id="html"><HTML class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="css"><CSS class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="javascript"><JavaScript class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="tailwind"><Tailwind class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="php"><PHP class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="laravel"><Laravel class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="sql"><SQL class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="mysql"><MySQL class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="docker"><Docker class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="postman"><Postman class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="git"><Git class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="github"><GitHub class="size-10 mx-auto" /></ShowSkills>
+                <ShowSkills class="skillIcon" data-set-id="sass"><SASS class="size-10 mx-auto" /></ShowSkills>
+            </div>
+        </section>
+    </section>
+</section>
+
+
+<script>
+
+    window.addEventListener("DOMContentLoaded", function() {
+        app();
+    })
+
+	function app() {
+		const skillIcons = document.querySelectorAll(".skillIcon") as NodeList;
+		const listOfSkills = document.querySelectorAll(".list-skill") as NodeList;
+		let setId = "";
+		let setListSkill = "";
+
+		skillIcons.forEach(element => {
+			element.addEventListener("mouseenter", function(e) {
+				setId = (e.target as HTMLElement)?.dataset.setId ?? "";
+
+				listOfSkills.forEach(e => {
+					setListSkill = (e as HTMLElement)?.dataset.setListOfSkill ?? "";
+					
+					if(setId == setListSkill) {
+						(e as HTMLElement).classList.add("text-emerald-500", "font-bold");
+					}
+				})
+			})
+
+			element.addEventListener("mouseleave", function(e) {
+				setId = (e.target as HTMLElement)?.dataset.setId ?? "";
+
+				listOfSkills.forEach(e => {
+					setListSkill = (e as HTMLElement)?.dataset.setListOfSkill ?? "";
+					
+					if(setId == setListSkill) {
+						(e as HTMLElement).classList.remove("text-emerald-500", "font-bold");
+					}
+				})
+			})
+		});
+	}
+
+</script>
+
+<style>
+
+	.skillIcon {
+		padding: .7rem 1rem;
+        border: 1px solid #006045;
+		border-radius: .5rem;
+        backdrop-filter: blur(1.5px);
+	}
+	.skillIcon:hover {
+		transition: all ease 300ms;
+		transform: translateY(-4px);
+        box-shadow: 
+            0px 5px 7px 1px #006045;
+        ;
+	}
+
+	.skillIcon:hover > svg {
+		transition: all ease 300ms;
+		transform: scale(1.1);
+	}
+
+    .section-show-skills-anim {
+        opacity: 0;
+        animation: reveal-skills linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 30%;
+        overflow-x: hidden;
+    }
+
+    @keyframes reveal-skills {
+        from {
+            opacity: 0;
+            translate: 0 50px;
+            scale: .9;
+        }
+
+        to {
+            opacity: 1;
+            translate: 0 0;
+            scale: 1;
+        }
+    }
+</style>

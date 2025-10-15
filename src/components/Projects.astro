@@ -1,0 +1,210 @@
+---
+import GitHub from "../Icons/GitHub.astro"
+import Preview from "../Icons/Preview.astro"
+import HTMLIcon from "../Icons/HTML.astro"
+import CSSIcon from "../Icons/CSS.astro"
+import JavascriptIcon from "../Icons/JavaScript.astro"
+import PHPIcon from "../Icons/PHP.astro"
+import Laravel from "../Icons/Laravel.astro"
+import { number } from "astro:schema"
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-orange-950 text-white",
+        icon: HTMLIcon,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-blue-950 text-white",
+        icon: CSSIcon,
+    },
+    JavaScript: {
+        name: "JavaScript",
+        class: "bg-yellow-300/30 text-white",
+        icon: JavascriptIcon,
+    },
+    PHP: {
+        name: "PHP",
+        class: "bg-[#7377AE]/50 text-white",
+        icon: PHPIcon,
+    },
+    Laravel: {
+        name: "Laravel",
+        class: "bg-[#FF2F20]/30 text-white",
+        icon: Laravel,
+    }
+}
+
+
+const PROJECTS = [
+    {
+        title: "CurOl 📚",
+        description: "CurOl es una plataforma de cursos online pensada para ayudarte a aprender de forma simple, práctica y a tu ritmo. Encuentra contenido de calidad en distintas áreas y potencia tus habilidades desde cualquier lugar.",
+        link: "https://curolapp.mnz.dom.my.id/",
+        github: "https://github.com/slv3490/CurOl---Proyecto-Personal",
+        imageJPG: "/images/proyects/jpg/curol.jpg",
+        imageWebp: "/images/proyects/webp/curol.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.PHP, TAGS.Laravel]
+    },
+    {
+        title: "DevWebCamp 💻",
+        description: "DevWebCamp es el evento donde la tecnología cobra vida: conferencias, workshops y networking con expertos que comparten las últimas tendencias del desarrollo web.",
+        link: "https://wamguva.mnz.dom.my.id/",
+        github: "https://github.com/slv3490/DevWebCamp",
+        imageJPG: "/images/proyects/jpg/devwebcamp.jpg",
+        imageWebp: "/images/proyects/webp/devwebcamp.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.PHP]
+    },
+    {
+        title: "AppSalon 💈",
+        description: "En App Salon transformamos cada corte en una experiencia. Somos una barbería moderna con el toque clásico que nunca pasa de moda. Reserva tu turno online de forma rápida y sencilla.",
+        link: "https://qowsego.mnz.dom.my.id/",
+        github: "https://github.com/slv3490/AppSalon_MVC_PHP_JS_SASS.git",
+        imageJPG: "/images/proyects/jpg/appsalon.jpg",
+        imageWebp: "/images/proyects/webp/appsalon.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.PHP, TAGS.Laravel]
+    },
+    {
+        title: "Vinoteca 🍷",
+        description: "Vinoteca es una tienda online dedicada al mundo del vino. Permite explorar, crear y gestionar categorías de vinos, añadir nuevos productos y disfrutar de una experiencia de compra sencilla y elegante en su apartado de tienda.",
+        github: "https://github.com/slv3490/vinoteca",
+        imageJPG: "/images/proyects/jpg/vinoteca.jpg",
+        imageWebp: "/images/proyects/webp/vinoteca.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.PHP, TAGS.Laravel]
+    },
+    {
+        title: "Uptask 📝",
+        description: "Vinoteca es una tienda online dedicada al mundo del vino. Permite explorar, crear y gestionar categorías de vinos, añadir nuevos productos y disfrutar de una experiencia de compra sencilla y elegante en su apartado de tienda.",
+        github: "https://github.com/slv3490/UpTask",
+        imageJPG: "/images/proyects/jpg/uptask.jpg",
+        imageWebp: "/images/proyects/webp/uptask.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.PHP]
+    },
+    { 
+        title: "BienesRaíces 🏡",
+        description: "Bienes Raíces es una plataforma para descubrir, gestionar y publicar propiedades. Ofrece una experiencia simple y organizada para explorar casas, departamentos y terrenos, conectando vendedores y compradores de forma práctica.",
+        github: "https://github.com/slv3490/BienesRaices_MVC",
+        imageJPG: "/images/proyects/jpg/bienesraices.jpg",
+        imageWebp: "/images/proyects/webp/bienesraices.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript, TAGS.PHP]
+    },
+    {
+        title: "Rock & EDM Festival 🎸",
+        description: "Rock & EDM Festival es el punto de encuentro para los amantes de la música. Un evento único que reúne la energía del rock con los beats de la música electrónica, ofreciendo conciertos, DJs en vivo y una experiencia inolvidable.",
+        link: "https://elegant-sherbet-a95b19.netlify.app/",
+        github: "https://github.com/slv3490/FestivalMusica",
+        imageJPG: "/images/proyects/jpg/rockandedmfestival.jpg",
+        imageWebp: "/images/proyects/webp/rockandedmfestival.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript]
+    },
+    {
+        title: "Blog de Café ☕",
+        description: "Blog de Café es un espacio dedicado a los amantes del buen café. Encuentra artículos, consejos, recetas y curiosidades para descubrir nuevos sabores y disfrutar de cada taza.",
+        link: "https://beamish-crumble-f2eca6.netlify.app",
+        github: "https://github.com/slv3490/BlogDeCafe",
+        imageJPG: "/images/proyects/jpg/blogdecafe.jpg",
+        imageWebp: "/images/proyects/webp/blogdecafe.webp",
+        tags: [TAGS.HTML, TAGS.CSS]
+    },
+    {
+        title: "Frontend Store 🛍️",
+        description: "Frontend Store es una tienda online especializada en camisas. Ofrece una selección cuidada de diseños modernos y clásicos, una experiencia de compra intuitiva y opciones fáciles de filtrado para encontrar la prenda perfecta.",
+        link: "https://legendary-beijinho-e02149.netlify.app/",
+        github: "https://github.com/slv3490/FrontendStore",
+        imageJPG: "/images/proyects/jpg/frontendstore.jpg",
+        imageWebp: "/images/proyects/webp/frontendstore.webp",
+        tags: [TAGS.HTML, TAGS.CSS]
+    },
+    {
+        title: "Diseño y Desarrollo Web Freelance 💻",
+        description: "Diseño y Desarrollo Web Freelance es mi primera página web, creada para presentar mis servicios como diseñador y desarrollador web independiente.",
+        link: "https://regal-swan-3fffe1.netlify.app/",
+        github: "https://github.com/slv3490/FreelanceSite",
+        imageJPG: "/images/proyects/jpg/diseñoydesarrolloweb.jpg",
+        imageWebp: "/images/proyects/webp/diseñoydesarrolloweb.webp",
+        tags: [TAGS.HTML, TAGS.CSS]
+    }
+]
+
+const {getNumberProjects, wcalc, flexboxArticle, textCenter, pills} = Astro.props;
+
+const GETPROJECTS = getProjects(getNumberProjects);
+
+function getProjects(num: number) {
+  return num ? PROJECTS.slice(0, num) : PROJECTS;
+}
+
+---
+
+{
+    GETPROJECTS.map(({title, description, link, github, imageJPG, imageWebp, tags}) => (
+
+        <article class={`flex ${flexboxArticle} space-x-0 space-y-8 group md:space-x-8 md:space-y-0 w-auto animation-project`}> 
+            <div class={`w-full ${wcalc}`}> 
+                <picture class="relative flex flex-col items-center col-span-6 row-span-5  transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                    <source srcset={imageWebp} type="image/webp">
+                    <img loading="lazy" alt={`Captura de pantalla de la imagen ${imageJPG}`} class="object-cover object-top w-full h-56 transition duration-500 md:scale-110 md:group-hover:scale-105" loading="lazy" src={imageJPG}> 
+                </picture> 
+            </div>
+
+            <div class={`w-full ${wcalc} md:max-w-lg`}> 
+                <h3 class={`text-2xl font-bold text-gray-800 dark:text-gray-100 ${textCenter}`}> {title} </h3> 
+
+                    <ul class={`flex flex-row flex-wrap mb-2 gap-x-2 ${pills}`}> 
+                        {
+                            tags.map((tag) => (
+                                <li> 
+                                    <span class={`mt-2 flex items-center gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}>
+                                        <tag.icon class="size-3.5" />{tag.name}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+
+                    <div class={`prose mx-auto mt-2 text-gray-700 dark:text-gray-400 ${textCenter}`}>
+                        {description}
+                    </div> 
+
+                    <footer class={`flex items-end mt-4 gap-x-4 ${pills}`}> 
+                        
+                        <a target="_blank" href={`${github}`} role="link" class="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring  focus-visible:ring-offset-2 active:bg-black">  
+                            <GitHub />
+                            Código
+                        </a> 
+
+                        { link && (
+                            <a target="_blank" href={`${link}`} role="link" class="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring  focus-visible:ring-offset-2 active:bg-black">  
+                                <Preview />
+                                Preview
+                            </a> 
+                        )}
+                    </footer> 
+                </div> 
+            </div> 
+        </article>
+    ))
+}
+
+<style>
+    .animation-project {
+        animation: reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 5% cover 30%;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            translate: 0 50px;
+            scale: .9;
+        }
+
+        to {
+            opacity: 1;
+            translate: 0 0;
+            scale: 1;
+        }
+    }
+</style>
